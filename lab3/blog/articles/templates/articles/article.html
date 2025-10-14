@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <a href="{% url 'archive' %}">← Назад к списку</a>
+    <h1>{{ post.title }}</h1>
+    <p><b>Автор:</b> {{ post.author.username }}</p>
+    <p><b>Дата публикации:</b> {{ post.created_date }}</p>
+    <p>{{ post.text }}</p>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Архив статей</title>
+</head>
+<body>
+    <h1>Архив статей</h1>
+    {% for post in posts %}
+        <div>
+            <h2><a href="{% url 'get_article' post.id %}">{{ post.title }}</a></h2>
+            <p><b>Автор:</b> {{ post.author.username }}</p>
+            <p><b>Дата:</b> {{ post.created_date }}</p>
+            <p>{{ post.text|truncatechars:200 }}</p>
+            <hr>
+        </div>
+    {% endfor %}
+</body>
+</html>
